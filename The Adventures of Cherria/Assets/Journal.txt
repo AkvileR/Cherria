@@ -6,3 +6,13 @@ Papildyta Options scena (ir sukurtas kodas)
 Implementuota garso sistema
 Bandyta ant gėlių uždėti vaizdo efektų (negražiai atrodo)
 Įdėta Sprite Mask (užvedus pelę ant nematomo ženklo jis tampa matomas)
+
+03-21:
+2D renderer ir 2D šviesos
+Pervadintas PlayerMovement kodas į Player (kintamieji sudėlioti struktūriškai, judėjimas yra viena iš dalių)
+Paslėptas dangaus fonas (disabled), jei reikia, galima lengvai enable'int
+Sukurtos šaudomos (mygtukas Z arba kairysis pelės mygtukas) mėlynės, parodančios netikras sienas
+Šiek tiek pakeisti paveikslėlių display layer'iai ir order in layer (nuo jų priklauso, kuris paveikslėlis rodomas dviem paveikslėliams persidengiant)
+Grąžintas lapelio kursorius
+Sukurta šiek tiek dulkių virš urvo gėlyčių
+Bandyta daryti garso efektus po mirties, bet prieš lygio kartojimą
