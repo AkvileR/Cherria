@@ -19,8 +19,9 @@ public class Player : MonoBehaviour
     private bool alive = true;
 
     [Header("Special Abilities")]
-    public GameObject revealingItemPrefab;
-    public int revealingItemSpeed;
+    public GameObject glowBerryPrefab;
+    public int glowBerryFlyingSpeed;
+    private bool glowBerryAbility = false;
 
     [Header("Animation")]
     public Animator animator;
@@ -48,9 +49,9 @@ public class Player : MonoBehaviour
             AudioManager.PlayJump();
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire1"))
+        if (glowBerryAbility && (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire1")) )
         {
-            ShootRevealingItem();
+            ShootGlowBerry();
         }
 
         if (transform.position.y < fallDeathThreshold)
@@ -78,16 +79,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Instakill")
+        switch (col.tag)
         {
-            StartCoroutine(RestartLevel());
+            case "Instakill":
+                StartCoroutine(RestartLevel());
+                break;
+            case "Glow Berry":
+                glowBerryAbility = true;
+                Destroy(col.gameObject);
+                break;
+            case "Next Level Door":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
         }
     }
 
-    void ShootRevealingItem()
+    void ShootGlowBerry()
     {
-        GameObject revealingItem = Instantiate(revealingItemPrefab, transform.position, transform.rotation);
-        Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * revealingItemSpeed;
+        GameObject revealingItem = Instantiate(glowBerryPrefab, transform.position, transform.rotation);
+        Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * glowBerryFlyingSpeed;
         revealingItem.GetComponent<Rigidbody2D>().velocity = dir;
     }
 
@@ -97,6 +107,7 @@ public class Player : MonoBehaviour
         Color nulifiedAlpha = gameObject.GetComponent<SpriteRenderer>().color;
         nulifiedAlpha.a = 0;
         gameObject.GetComponent<SpriteRenderer>().color = nulifiedAlpha;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         
         AudioManager.PlayDie();
         yield return new WaitForSeconds(1.5f);

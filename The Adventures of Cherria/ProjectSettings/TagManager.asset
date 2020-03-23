@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Instakill
   - Audio Manager
+  - Glow Berry
+  - Next Level Door
   layers:
   - Default
   - TransparentFX
@@ -45,7 +47,4 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 873246583
     locked: 0

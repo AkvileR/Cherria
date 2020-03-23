@@ -87,7 +87,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,9 +219,9 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   fallDeathThreshold: -30
-  revealingItemPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,
+  glowBerryPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,
     type: 3}
-  revealingItemSpeed: 30
+  glowBerryFlyingSpeed: 30
   animator: {fileID: 4281273296757740193}
 --- !u!95 &4281273296757740193
 Animator:

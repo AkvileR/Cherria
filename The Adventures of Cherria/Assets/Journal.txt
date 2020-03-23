@@ -11,8 +11,14 @@ Bandyta ant gėlių uždėti vaizdo efektų (negražiai atrodo)
 2D renderer ir 2D šviesos
 Pervadintas PlayerMovement kodas į Player (kintamieji sudėlioti struktūriškai, judėjimas yra viena iš dalių)
 Paslėptas dangaus fonas (disabled), jei reikia, galima lengvai enable'int
-Sukurtos šaudomos (mygtukas Z arba kairysis pelės mygtukas) mėlynės, parodančios netikras sienas
+Sukurtos šaudomos (mygtukas Z arba kairysis pelės mygtukas) uogos, parodančios netikras sienas
 Šiek tiek pakeisti paveikslėlių display layer'iai ir order in layer (nuo jų priklauso, kuris paveikslėlis rodomas dviem paveikslėliams persidengiant)
-Grąžintas lapelio kursorius
+Grąžintas lapelio kursorius, deaktyvintas CursorHide kodas (jis ant Main Camera'os)
 Sukurta šiek tiek dulkių virš urvo gėlyčių
 Bandyta daryti garso efektus po mirties, bet prieš lygio kartojimą
+
+03-22:
+Šviečiančiai uogai ir jos augalui naudojami Don't Starve Together paveiksliukai, iš interneto paimti kristalai (reikia originalių)!
+Norint šaudyti šviečiančias uogas, reikia rasti šviečiančių uogų augalą
+Pridėtas Post Processing (jį naudojant galima suteikti vaizdo efektų žaidimui), jame aktyvuotas Bloom (paryškina šviečiančius objektus)
+Sukurtas Next Level Door tag'as ir papildytas žaidėjo kodo OnTriggerEnter2D; žaidėjas, pasiekęs duris, yra perkeliamas į kitą lygį
