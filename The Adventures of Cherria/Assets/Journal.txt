@@ -17,8 +17,11 @@ Grąžintas lapelio kursorius, deaktyvintas CursorHide kodas (jis ant Main Camer
 Sukurta šiek tiek dulkių virš urvo gėlyčių
 Bandyta daryti garso efektus po mirties, bet prieš lygio kartojimą
 
-03-22:
+03-23:
 Šviečiančiai uogai ir jos augalui naudojami Don't Starve Together paveiksliukai, iš interneto paimti kristalai (reikia originalių)!
 Norint šaudyti šviečiančias uogas, reikia rasti šviečiančių uogų augalą
 Pridėtas Post Processing (jį naudojant galima suteikti vaizdo efektų žaidimui), jame aktyvuotas Bloom (paryškina šviečiančius objektus)
 Sukurtas Next Level Door tag'as ir papildytas žaidėjo kodo OnTriggerEnter2D; žaidėjas, pasiekęs duris, yra perkeliamas į kitą lygį
+
+03-24:
+Vaikštantys brokoliai
