@@ -40201,7 +40201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &848182686
 Transform:
   m_ObjectHideFlags: 0
@@ -40232,7 +40232,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9433962, g: 0.90611994, b: 0.5206479, a: 1}
-  m_Intensity: 20
+  m_Intensity: 15
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000918b2bcb77af0c34
   m_LightCookieSprite: {fileID: 0}
@@ -40243,7 +40243,7 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 10
+  m_PointLightInnerRadius: 7
   m_PointLightOuterRadius: 20
   m_PointLightDistance: 3
   m_PointLightQuality: 1
@@ -47489,7 +47489,7 @@ PrefabInstance:
     - target: {fileID: 8015867605295383028, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.99
+      value: 9.46
       objectReference: {fileID: 0}
     - target: {fileID: 8015867605295383028, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
         type: 3}
@@ -57586,7 +57586,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1351599935}
   - component: {fileID: 1351599937}
-  - component: {fileID: 1351599936}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -57613,22 +57612,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6, y: -259}
+  m_AnchoredPosition: {x: 200, y: 50}
   m_SizeDelta: {x: 261.5, y: 33.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1351599936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351599934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ade7843930fbd4f8f81850586c7241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1351599937}
 --- !u!114 &1351599937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88610,7 +88596,12 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1351599936}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281273296757740192, guid: 727e7a210a4b4734d81f9d62f08d029e,
+        type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1351599937}
     - target: {fileID: 4281273296757740195, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88749,6 +88740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8015867605295383016, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8015867605295383028, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88757,7 +88753,7 @@ PrefabInstance:
     - target: {fileID: 8015867605295383028, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.01
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8015867605295383028, guid: 1d51951b050c1db429a1d0ce76a1bb3f,
         type: 3}

@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 4281273296757740196}
   - component: {fileID: 4281273296757740199}
   - component: {fileID: 4281273296757740198}
-  - component: {fileID: 4281273296757740192}
   - component: {fileID: 4281273296757740193}
+  - component: {fileID: 4281273296757740192}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -60,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281273296757740185}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -201,28 +201,6 @@ CircleCollider2D:
   m_Offset: {x: 0.04008466, y: -0.7062485}
   serializedVersion: 2
   m_Radius: 0.5696293
---- !u!114 &4281273296757740192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4281273296757740185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c767d48d7651e479b828182d57b05b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 4281273296757740197}
-  runSpeed: 20
-  maxHealth: 20
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  fallDeathThreshold: -30
-  glowBerryPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,
-    type: 3}
-  glowBerryFlyingSpeed: 30
-  animator: {fileID: 4281273296757740193}
 --- !u!95 &4281273296757740193
 Animator:
   serializedVersion: 3
@@ -242,6 +220,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4281273296757740192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4281273296757740185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c767d48d7651e479b828182d57b05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 4281273296757740197}
+  runSpeed: 20
+  maxHealth: 20
+  fallDeathThreshold: -30
+  healthSlider: {fileID: 0}
+  glowBerryPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,
+    type: 3}
+  glowBerryFlyingSpeed: 30
+  animator: {fileID: 4281273296757740193}
 --- !u!1 &4281273297427778786
 GameObject:
   m_ObjectHideFlags: 0

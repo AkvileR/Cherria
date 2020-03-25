@@ -25,3 +25,11 @@ Sukurtas Next Level Door tag'as ir papildytas žaidėjo kodo OnTriggerEnter2D; �
 
 03-24:
 Vaikštantys brokoliai
+
+03-25:
+Brokoliai nebe collider+trigger, o tik collider, todėl vyšnia ne vaikšto kiaurai juo, o atsitrenkia
+Brokoliai dabar eina į vyšnią, o ne jos vengia
+Brokoliai daro žalos ir tada miršta
+HealthBar kodas panaikintas, jis integruotas į Player kodą
+Sprite'ai iš Health aplanko perkelti į Sprites aplanką
+Health bar'as kinta kintant gyvybėms, bandyta padaryti slider'io vertės kitimą palengva, o ne iš karto

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -12,11 +13,12 @@ public class Player : MonoBehaviour
     bool jump = false;
 
     [Header("Health")]
-    public int maxHealth = 20;
-    public int currentHealth;
-    public HealthBar healthBar;
+    public int maxHealth;
+    [SerializeField]
+    private int currentHealth;
     public int fallDeathThreshold;
     private bool alive = true;
+    public Slider healthSlider;
 
     [Header("Special Abilities")]
     public GameObject glowBerryPrefab;
@@ -29,15 +31,22 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        SetMaxHealth(maxHealth);
         alive = true;
     }
 
     void Update()
     {
+        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, 30 * Time.deltaTime);
+
         if (!alive)
         {
             return;
+        }
+
+        if (transform.position.y < fallDeathThreshold || currentHealth <= 0)
+        {
+            StartCoroutine(RestartLevel());
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -53,11 +62,6 @@ public class Player : MonoBehaviour
         {
             ShootGlowBerry();
         }
-
-        if (transform.position.y < fallDeathThreshold)
-        {
-            StartCoroutine(RestartLevel());
-        }
     }
    
     void FixedUpdate()
@@ -69,13 +73,22 @@ public class Player : MonoBehaviour
 
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
-    }  
+    }
+
+    #region Health and health UI
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
     }
+
+    void SetMaxHealth(int health)
+    {
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
+    }
+
+    #endregion
 
     private void OnTriggerEnter2D(Collider2D col)
     {
