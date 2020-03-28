@@ -14,11 +14,13 @@ public class Player : MonoBehaviour
 
     [Header("Health")]
     public int maxHealth;
-    [SerializeField]
     private int currentHealth;
     public int fallDeathThreshold;
     private bool alive = true;
+
+    [Header("Health UI")]
     public Slider healthSlider;
+    public float lerpSpeed;
 
     [Header("Special Abilities")]
     public GameObject glowBerryPrefab;
@@ -37,14 +39,20 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, 30 * Time.deltaTime);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, Time.deltaTime * lerpSpeed);
 
         if (!alive)
         {
             return;
         }
 
-        if (transform.position.y < fallDeathThreshold || currentHealth <= 0)
+        if (transform.position.y < fallDeathThreshold)
+        {
+            TakeDamage(currentHealth);
+        }
+
+        if (currentHealth <= 0)
         {
             StartCoroutine(RestartLevel());
         }
@@ -95,7 +103,7 @@ public class Player : MonoBehaviour
         switch (col.tag)
         {
             case "Instakill":
-                StartCoroutine(RestartLevel());
+                TakeDamage(currentHealth);
                 break;
             case "Glow Berry":
                 glowBerryAbility = true;

@@ -17,11 +17,11 @@ TagManager:
   - UI
   - 
   - 
-  - Player
   - Fake Terrain
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Friendly Projectile
+  - Hostile Projectile
   - 
   - 
   - 

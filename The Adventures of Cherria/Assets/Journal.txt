@@ -7,7 +7,7 @@ Implementuota garso sistema
 Bandyta ant gėlių uždėti vaizdo efektų (negražiai atrodo)
 Įdėta Sprite Mask (užvedus pelę ant nematomo ženklo jis tampa matomas)
 
-03-21:
+03-22:
 2D renderer ir 2D šviesos
 Pervadintas PlayerMovement kodas į Player (kintamieji sudėlioti struktūriškai, judėjimas yra viena iš dalių)
 Paslėptas dangaus fonas (disabled), jei reikia, galima lengvai enable'int
@@ -33,3 +33,10 @@ Brokoliai daro žalos ir tada miršta
 HealthBar kodas panaikintas, jis integruotas į Player kodą
 Sprite'ai iš Health aplanko perkelti į Sprites aplanką
 Health bar'as kinta kintant gyvybėms, bandyta padaryti slider'io vertės kitimą palengva, o ne iš karto
+
+03-28:
+Health bar'as gražiai palengva kinta pasikeitus gyvybėms
+Gyvybės nebegali viršyti maksimalios gyvybių ribos
+Brokoliai turi hitbox'us (ant jų užšokus jie miršta)
+Sukurtos durys pirmame lygyje, vedančios į antrą lygį prieš bosą (laikinai)
+Daromas bosas - šešėlių ragana (padaryta teleportacija, dingimo ir atsiradimo efektas, šaudomi šešėlių kamuoliai)

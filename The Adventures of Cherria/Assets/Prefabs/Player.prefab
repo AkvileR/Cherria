@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4281273296283217402}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: LubosCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4281273296757740198}
   - component: {fileID: 4281273296757740193}
   - component: {fileID: 4281273296757740192}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 7aa546ea1c0cc644b8c12c1ca0b0c03f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   maxHealth: 20
   fallDeathThreshold: -30
   healthSlider: {fileID: 0}
+  lerpSpeed: 2
   glowBerryPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,
     type: 3}
   glowBerryFlyingSpeed: 30
@@ -250,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4281273297427778787}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

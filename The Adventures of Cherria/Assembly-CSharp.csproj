@@ -102,10 +102,12 @@
     <Compile Include="Assets\Scripts\CursorHide.cs" />
     <Compile Include="Assets\Scripts\FollowCursor.cs" />
     <Compile Include="Assets\Scripts\GlowBerry.cs" />
+    <Compile Include="Assets\Scripts\HostileProjectile.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlatformEnemy.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\WitchOfShadows.cs" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -172,6 +174,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Users/Rasa/Documents/Mato/Unity/GitHub/Cherria/The Adventures of Cherria/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/Users/Rasa/Documents/Mato/Unity/GitHub/Cherria/The Adventures of Cherria/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>C:/Users/Rasa/Documents/Mato/Unity/GitHub/Cherria/The Adventures of Cherria/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>

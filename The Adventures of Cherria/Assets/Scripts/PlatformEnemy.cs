@@ -26,12 +26,6 @@ public class PlatformEnemy : MonoBehaviour
         RaycastHit2D leftDownHit = Physics2D.Raycast(leftCheck.position, Vector2.down, checkRayLength);
         RaycastHit2D rightHit = Physics2D.Raycast(rightCheck.position, Vector2.right, checkRayLength);
         RaycastHit2D rightDownHit = Physics2D.Raycast(rightCheck.position, Vector2.down, checkRayLength);
-        /*
-        Debug.Log("L: " + leftHit.collider);
-        Debug.Log("LD: " + leftDownHit.collider);
-        Debug.Log("R: " + rightHit.collider);
-        Debug.Log("RD: " + rightDownHit.collider);
-        */
 
         if (leftDownHit.collider == null)
         {
@@ -53,11 +47,12 @@ public class PlatformEnemy : MonoBehaviour
             dirMultiplier = -1;
             sr.flipX = true;
         }
-        
+        /*
         Debug.DrawRay(leftCheck.position, Vector2.left, Color.cyan, checkRayLength);
         Debug.DrawRay(leftCheck.position, Vector2.down, Color.cyan, checkRayLength);
         Debug.DrawRay(rightCheck.position, Vector2.down, Color.cyan, checkRayLength);
         Debug.DrawRay(rightCheck.position, Vector2.right, Color.cyan, checkRayLength);
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -65,6 +60,14 @@ public class PlatformEnemy : MonoBehaviour
         if (col.collider.CompareTag("Player"))
         {
             col.collider.GetComponent<Player>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
             Destroy(gameObject);
         }
     }

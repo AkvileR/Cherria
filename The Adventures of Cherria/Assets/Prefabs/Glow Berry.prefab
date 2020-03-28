@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3172616625860025864}
   - component: {fileID: 9130529124013060650}
   - component: {fileID: -3872697367613211354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Glow Berry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6938373975614271203}
   - component: {fileID: 387386260530783007}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

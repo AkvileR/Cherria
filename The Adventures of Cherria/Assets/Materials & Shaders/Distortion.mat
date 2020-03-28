@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Distortion
+  m_Shader: {fileID: -6465566751694194690, guid: 3fc7070c9a0fcda45a7ad8c413360392,
+    type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 3602bf2ce7835134087832d8fd31193c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3E8C8F45: 0.1
+    - Vector1_409044A1: 1
+    - Vector1_6FEB63A4: 5
+    - Vector1_87B5D263: 0.1
+    - _Fade: 1
+    m_Colors:
+    - Color_B5E91785: {r: 1.3674163, g: 0.073914394, b: 2.3529415, a: 0}
+    - Vector2_69A579A3: {r: 0.3, g: 0, b: 0, a: 0}
+    - Vector2_9EE350D8: {r: 1, g: 1, b: 0, a: 0}
