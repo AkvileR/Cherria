@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4281273296283217402}
   m_Layer: 9
-  m_Name: LubosCheck
+  m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281273296283217405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.868, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4281273296757740195}
@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 4281273296757740185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14, y: -10, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4281273296283217402}
   - {fileID: 4281273297427778787}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7479
   m_GroundCheck: {fileID: 4281273297427778787}
   m_CeilingCheck: {fileID: 4281273296283217402}
   m_CrouchDisableCollider: {fileID: 0}
@@ -235,7 +235,7 @@ MonoBehaviour:
   controller: {fileID: 4281273296757740197}
   runSpeed: 20
   maxHealth: 20
-  fallDeathThreshold: -30
+  fallDeathThreshold: -100
   healthSlider: {fileID: 0}
   lerpSpeed: 2
   glowBerryPrefab: {fileID: 445168359359520422, guid: e8544454bc919284a80099c3d9d7a86b,

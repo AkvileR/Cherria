@@ -88,6 +88,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (damage > 0)
+        {
+            AudioManager.PlayTakeDamage();
+        }
     }
 
     void SetMaxHealth(int health)

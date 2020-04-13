@@ -40,3 +40,10 @@ Gyvybės nebegali viršyti maksimalios gyvybių ribos
 Brokoliai turi hitbox'us (ant jų užšokus jie miršta)
 Sukurtos durys pirmame lygyje, vedančios į antrą lygį prieš bosą (laikinai)
 Daromas bosas - šešėlių ragana (padaryta teleportacija, dingimo ir atsiradimo efektas, šaudomi šešėlių kamuoliai)
+
+04-13:
+Žaidėjas nebeatsitrenkia į save
+Pirmas lygis dabar pereinamas
+Žaidėjo gautos žalos ir brokolių mirties garsai
+Šuolis po brokolio mirties
+Sutvarkytas brokolio sprite'as ir animacijos

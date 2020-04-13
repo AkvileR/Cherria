@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformEnemy : MonoBehaviour
 {
-    public int movementSpeed;
+    public float movementSpeed;
     public float checkRayLength;
     public Transform leftCheck;
     public Transform rightCheck;
@@ -12,6 +12,7 @@ public class PlatformEnemy : MonoBehaviour
     private SpriteRenderer sr;
     private int dirMultiplier = 1;
     public int damage;
+    public int playerJumpForce;
 
     private void Start()
     {
@@ -47,12 +48,6 @@ public class PlatformEnemy : MonoBehaviour
             dirMultiplier = -1;
             sr.flipX = true;
         }
-        /*
-        Debug.DrawRay(leftCheck.position, Vector2.left, Color.cyan, checkRayLength);
-        Debug.DrawRay(leftCheck.position, Vector2.down, Color.cyan, checkRayLength);
-        Debug.DrawRay(rightCheck.position, Vector2.down, Color.cyan, checkRayLength);
-        Debug.DrawRay(rightCheck.position, Vector2.right, Color.cyan, checkRayLength);
-        */
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -68,7 +63,14 @@ public class PlatformEnemy : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            col.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpForce, ForceMode2D.Impulse);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        AudioManager.PlayBroccoliDie();
+        Destroy(gameObject);
     }
 }

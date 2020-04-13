@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip die;
     public AudioClip win;
+    public AudioClip takeDamage;
+    public AudioClip broccoliDie;
 
     private void Awake()
     {
@@ -81,5 +83,33 @@ public class AudioManager : MonoBehaviour
     private void InstancePlayWin()
     {
         PlayFxClip(win);
+    }
+
+    public static void PlayTakeDamage()
+    {
+        if (instance == null)
+        {
+            return;
+        }
+        instance.InstancePlayTakeDamage();
+    }
+
+    private void InstancePlayTakeDamage()
+    {
+        PlayFxClip(takeDamage);
+    }
+
+    public static void PlayBroccoliDie()
+    {
+        if (instance == null)
+        {
+            return;
+        }
+        instance.InstancePlayBroccoliDie();
+    }
+
+    private void InstancePlayBroccoliDie()
+    {
+        PlayFxClip(broccoliDie);
     }
 }

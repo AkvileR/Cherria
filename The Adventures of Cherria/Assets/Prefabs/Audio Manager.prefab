@@ -51,6 +51,8 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 30a7a437fc8f75240a15080719c10678, type: 3}
   die: {fileID: 8300000, guid: 6830c1cf1485f3849919b0318d075d47, type: 3}
   win: {fileID: 8300000, guid: bb4e78411f8db2549af5b2dff358361a, type: 3}
+  takeDamage: {fileID: 8300000, guid: ba1b1688e08ef9e46b2455db7ec2c46f, type: 3}
+  broccoliDie: {fileID: 8300000, guid: b6c78f61758470b4d8dd39600aba06e8, type: 3}
 --- !u!82 &4225263514082810940
 AudioSource:
   m_ObjectHideFlags: 0
