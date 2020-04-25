@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\FollowCursor.cs" />
     <Compile Include="Assets\Scripts\GlowBerry.cs" />
     <Compile Include="Assets\Scripts\HostileProjectile.cs" />
+    <Compile Include="Assets\Scripts\HowToPlay.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlatformEnemy.cs" />

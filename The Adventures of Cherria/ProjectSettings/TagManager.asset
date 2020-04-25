@@ -8,6 +8,7 @@ TagManager:
   - Audio Manager
   - Glow Berry
   - Next Level Door
+  - NPC
   layers:
   - Default
   - TransparentFX
