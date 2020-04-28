@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\CursorHide.cs" />
     <Compile Include="Assets\Scripts\FollowCursor.cs" />
+    <Compile Include="Assets\Scripts\Frederick.cs" />
     <Compile Include="Assets\Scripts\GlowBerry.cs" />
     <Compile Include="Assets\Scripts\HostileProjectile.cs" />
     <Compile Include="Assets\Scripts\HowToPlay.cs" />
