@@ -2,26 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformEnemy : MonoBehaviour
+public class PlatformEnemy : Enemy
 {
     public float movementSpeed;
     public float checkRayLength;
     public Transform leftCheck;
     public Transform rightCheck;
     public GameObject graphics;
-    private SpriteRenderer sr;
-    private int dirMultiplier = 1;
+    [HideInInspector]
+    public SpriteRenderer sr;
     public int damage;
     public int playerJumpForce;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         sr = graphics.GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    public override void Update()
     {
-        transform.Translate(Vector2.right * movementSpeed * dirMultiplier * Time.deltaTime);
+        base.Update();
+
+        transform.Translate(Vector2.right * movementSpeed * (sr.flipX ? -1 : 1) * Time.deltaTime);
 
         RaycastHit2D leftHit = Physics2D.Raycast(leftCheck.position, Vector2.left, checkRayLength);
         RaycastHit2D leftDownHit = Physics2D.Raycast(leftCheck.position, Vector2.down, checkRayLength);
@@ -30,22 +34,18 @@ public class PlatformEnemy : MonoBehaviour
 
         if (leftDownHit.collider == null)
         {
-            dirMultiplier = 1;
             sr.flipX = false;
         }
         else if (rightDownHit.collider == null)
         {
-            dirMultiplier = -1;
             sr.flipX = true;
         }
         else if (leftHit.collider != null && leftHit.collider.tag != "Player")
         {
-            dirMultiplier = 1;
             sr.flipX = false;
         }
         else if (rightHit.collider != null && rightHit.collider.tag != "Player")
         {
-            dirMultiplier = -1;
             sr.flipX = true;
         }
     }
@@ -55,7 +55,7 @@ public class PlatformEnemy : MonoBehaviour
         if (col.collider.CompareTag("Player"))
         {
             col.collider.GetComponent<Player>().TakeDamage(damage);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -64,13 +64,8 @@ public class PlatformEnemy : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             col.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpForce, ForceMode2D.Impulse);
+            AudioManager.PlayBroccoliDie();
             Die();
         }
-    }
-
-    private void Die()
-    {
-        AudioManager.PlayBroccoliDie();
-        Destroy(gameObject);
     }
 }

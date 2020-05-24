@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Instakill
   - Audio Manager
-  - Glow Berry
   - Next Level Door
   - NPC
   - GameManager
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -18,14 +19,16 @@ public class Player : MonoBehaviour
     public int fallDeathThreshold;
     private bool alive = true;
 
-    [Header("Health UI")]
+    [Header("UI")]
     public Slider healthSlider;
-    public float lerpSpeed;
+    public float healthLerpSpeed;
+    public Image projectileImage;
+    public TextMeshProUGUI projectileAmmoText;
 
     [Header("Special Abilities")]
-    public GameObject glowBerryPrefab;
-    public int glowBerryFlyingSpeed;
-    private bool glowBerryAbility = false;
+    public PlayerProjectile[] projectiles;
+    private int activeProjectile;
+    private int projectilesAcquired = 2;
 
     [Header("Animation")]
     public Animator animator;
@@ -35,12 +38,19 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
         alive = true;
+
+        foreach (PlayerProjectile pp in projectiles)
+        {
+            pp.currentAmmo = pp.ammo;
+        }
+
+        ChangeProjectileUI();
     }
 
     void Update()
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, Time.deltaTime * lerpSpeed);
+        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, Time.deltaTime * healthLerpSpeed);
 
         if (!alive)
         {
@@ -66,9 +76,20 @@ public class Player : MonoBehaviour
             AudioManager.PlayJump();
         }
 
-        if (glowBerryAbility && (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire1")) )
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
         {
-            ShootGlowBerry();
+            activeProjectile++;
+            ChangeProjectileUI();
+        }
+        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+        {
+            activeProjectile--;
+            ChangeProjectileUI();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            ShootProjectile();
         }
     }
    
@@ -109,21 +130,55 @@ public class Player : MonoBehaviour
             case "Instakill":
                 TakeDamage(currentHealth);
                 break;
-            case "Glow Berry":
-                glowBerryAbility = true;
-                Destroy(col.gameObject);
-                break;
             case "Next Level Door":
+                //foreach (PlayerProjectile pp in projectiles)
+                //{
+                //    pp.ammo = pp.currentAmmo;
+                //}
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
         }
     }
 
-    void ShootGlowBerry()
+    public void GetAmmo(int projectileNo, int amount)
     {
-        GameObject revealingItem = Instantiate(glowBerryPrefab, transform.position, transform.rotation);
-        Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * glowBerryFlyingSpeed;
-        revealingItem.GetComponent<Rigidbody2D>().velocity = dir;
+        projectiles[projectileNo].currentAmmo += amount;
+    }
+
+    void ChangeProjectileUI()
+    {
+        if (projectilesAcquired == 0)
+        {
+            projectileImage.gameObject.SetActive(false);
+            activeProjectile = 0;
+        }
+        else
+        {
+            if (activeProjectile == -1)
+            {
+                activeProjectile = projectilesAcquired - 1;
+            }
+            else if (activeProjectile == projectilesAcquired)
+            {
+                activeProjectile = 0;
+            }
+
+            projectileImage.gameObject.SetActive(true);
+            projectileImage.sprite = projectiles[activeProjectile].sprite;
+            projectileAmmoText.text = projectiles[activeProjectile].currentAmmo.ToString();
+        }
+    }
+
+    void ShootProjectile()
+    {
+        if (projectilesAcquired != 0 && projectiles[activeProjectile].currentAmmo > 0)
+        {
+            GameObject projectile = Instantiate(projectiles[activeProjectile].prefab, transform.position, transform.rotation);
+            Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * projectiles[activeProjectile].flyingSpeed;
+            projectile.GetComponent<Rigidbody2D>().velocity = dir;
+            projectiles[activeProjectile].currentAmmo--;
+            ChangeProjectileUI();
+        }        
     }
 
     IEnumerator RestartLevel()
@@ -133,7 +188,8 @@ public class Player : MonoBehaviour
         nulifiedAlpha.a = 0;
         gameObject.GetComponent<SpriteRenderer>().color = nulifiedAlpha;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+
         AudioManager.PlayDie();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

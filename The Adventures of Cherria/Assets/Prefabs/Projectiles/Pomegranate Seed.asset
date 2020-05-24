@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a21ace25ae6534e945926f259dd857, type: 3}
+  m_Name: Pomegranate Seed
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 88684032bf8eb5042bf113dec66d105b, type: 3}
+  prefab: {fileID: 809952587651358153, guid: 712d27a3e7cef2044988b4c939ae2a42, type: 3}
+  flyingSpeed: 30
+  ammo: 7
+  currentAmmo: 5
