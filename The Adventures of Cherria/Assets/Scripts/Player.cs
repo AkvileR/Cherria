@@ -91,8 +91,14 @@ public class Player : MonoBehaviour
         {
             ShootProjectile();
         }
+
+        if (Input.GetButtonDown("Esc"))
+        {
+            SceneManager.LoadScene(4);
+        }
     }
    
+
     void FixedUpdate()
     {
         if (!alive)
@@ -104,6 +110,7 @@ public class Player : MonoBehaviour
         jump = false;
     }
 
+   
     #region Health and health UI
 
     public void TakeDamage(int damage)
