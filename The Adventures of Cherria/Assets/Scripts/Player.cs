@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
                 //{
                 //    pp.ammo = pp.currentAmmo;
                 //}
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(4);
                 break;
         }
     }
