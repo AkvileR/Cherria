@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WitchOfShadows : MonoBehaviour
+public class WitchOfShadows : Enemy
 {
-    public int health;
-    [HideInInspector]
-    public int currentHealth;
+    [Header("General")]
+    public Slider healthSlider;
+    public float healthLerpSpeed;
     private Material material;
     private Transform player;
+    public float minPositionY;
 
     [Header("Teleportation")]
     public float fadingSpeed;
@@ -16,8 +18,8 @@ public class WitchOfShadows : MonoBehaviour
     private bool fadingIn;
     private bool fadingOut;
 
-    public float minTeleportationTime;
-    public float maxTeleportationTime;
+    public float minTeleportationCooldown;
+    public float maxTeleportationCooldown;
     private float teleportationCountdown;
     public float maxTeleportationDistance;
 
@@ -28,28 +30,60 @@ public class WitchOfShadows : MonoBehaviour
     public int shadowBallDamage;
     public float shadowBallChargeTime;
 
-    public float minShootingTime;
-    public float maxShootingTime;
+    public float minShootingCooldown;
+    public float maxShootingCooldown;
     private float shootingCountdown;
 
-    void Start()
+    [Header("Darkness")]
+    public GameObject darknessPostProcessingVolume;
+    public float minDarknessCooldown;
+    public float maxDarknessCooldown;
+    public float darknessDuration;
+    private float darknessCountdown;
+    private float darknessTimeLeft;
+
+    [Header("Darkness")]
+    public GameObject zombieBroccoliPrefab;
+    public Transform zombieSummoningRayPoint;
+    public float minSummoningCooldown;
+    public float maxSummoningCooldown;
+    private float summoningCountdown;
+
+    public override void Start()
     {
+        base.Start();
+
         material = gameObject.GetComponent<SpriteRenderer>().material;
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        teleportationCountdown = Random.Range(minTeleportationTime, maxTeleportationTime);
-        shootingCountdown = Random.Range(minShootingTime, maxShootingTime);
+        teleportationCountdown = Random.Range(minTeleportationCooldown, maxTeleportationCooldown);
+        shootingCountdown = Random.Range(minShootingCooldown, maxShootingCooldown);
+        darknessCountdown = Random.Range(minDarknessCooldown, maxDarknessCooldown);
+        summoningCountdown = Random.Range(minSummoningCooldown, maxSummoningCooldown);
+
+        darknessPostProcessingVolume.SetActive(false);
         fadingIn = fadingOut = false;
     }
     
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+        healthSlider.value = Mathf.Lerp(healthSlider.value, healthPoints, Time.deltaTime * healthLerpSpeed);
+
+        if (transform.position.y < minPositionY)
+        {
+            Vector2 pos = transform.position;
+            pos.y = minPositionY;
+            transform.position = pos;
+        }
+
         #region Teleportation
         if (!fadingIn && !fadingOut)
         {
             if (teleportationCountdown <= 0)
             {
-                teleportationCountdown = Random.Range(minTeleportationTime, maxTeleportationTime);
+                teleportationCountdown = Random.Range(minTeleportationCooldown, maxTeleportationCooldown);
 
                 fadingOut = true;
                 currentFadingTime = 1;
@@ -94,12 +128,52 @@ public class WitchOfShadows : MonoBehaviour
         #region Shooting
         if (shootingCountdown <= 0)
         {
-            shootingCountdown = Random.Range(minShootingTime, maxShootingTime);
+            shootingCountdown = Random.Range(minShootingCooldown, maxShootingCooldown);
             ShootShadowBall();
         }
         else
         {
             shootingCountdown -= Time.deltaTime;
+        }
+        #endregion
+
+        #region Darkness
+        if (darknessCountdown <= 0)
+        {            
+            if (darknessTimeLeft <= 0)
+            {
+                darknessPostProcessingVolume.SetActive(false);
+                darknessCountdown = Random.Range(minDarknessCooldown, maxDarknessCooldown);
+                darknessTimeLeft = darknessDuration;
+            }
+            else
+            {
+                darknessPostProcessingVolume.SetActive(true);
+                darknessTimeLeft -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            darknessPostProcessingVolume.SetActive(false);
+            darknessCountdown -= Time.deltaTime;
+        }
+        #endregion
+
+        #region Zombie Summoning
+        if (summoningCountdown <= 0)
+        {
+            summoningCountdown = Random.Range(minSummoningCooldown, maxSummoningCooldown);
+            
+            if (Physics2D.Raycast(zombieSummoningRayPoint.position, Vector2.down))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(zombieSummoningRayPoint.position, Vector2.down);
+                GameObject zombieBroccoli = Instantiate(zombieBroccoliPrefab, hit.point, Quaternion.identity);
+                zombieBroccoli.transform.position += zombieBroccoli.transform.localScale;
+            }
+        }
+        else
+        {
+            summoningCountdown -= Time.deltaTime;
         }
         #endregion
     }
