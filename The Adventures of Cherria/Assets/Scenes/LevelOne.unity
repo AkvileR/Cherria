@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2021,8 +2021,10 @@ GameObject:
   - component: {fileID: 393428384}
   - component: {fileID: 393428383}
   - component: {fileID: 393428382}
+  - component: {fileID: 393428385}
+  - component: {fileID: 393428386}
   m_Layer: 0
-  m_Name: "dienora\u0161tis (WIP)"
+  m_Name: "dienora\u0161tis"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2112,6 +2114,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393428385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393428381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16ad6de7d31b4f4e84f4e5a59978c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpBox: {fileID: 1312336774}
+  dialogText: {fileID: 539153622}
+  dialog: 'You found someone''s diary. The pages are torn, but it looks fairly new.
+    You open the last page. It reads: ''I think they found me. I''ve been hiding
+    here for days. But they found me. I''m afraid they will take me to the void.
+    It''s not just a game anymore.'' '
+  playerInRange: 0
+  popUp: 
+--- !u!61 &393428386
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393428381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &405977049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3340,6 +3388,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 532836400}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &539153622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4120391362764112432, guid: be210d2bbd8ed7848bffb7c73e2e126c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1793633512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &542926626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45911,6 +45971,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1312336774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4120391362907902879, guid: be210d2bbd8ed7848bffb7c73e2e126c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1793633512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1316352912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51843,7 +51909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127559440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.452, y: 0.165, z: -10}
+  m_LocalPosition: {x: 2.29, y: 0.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52410,7 +52476,7 @@ PrefabInstance:
     - target: {fileID: 1327139959436769607, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2328056053565385994, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
@@ -52430,12 +52496,12 @@ PrefabInstance:
     - target: {fileID: 4281273296757740195, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.452
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 4281273296757740195, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.165
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4281273296757740195, guid: 727e7a210a4b4734d81f9d62f08d029e,
         type: 3}
@@ -52701,12 +52767,12 @@ PrefabInstance:
     - target: {fileID: 6191552087404810844, guid: f5600281adb52de40a855955e7d95ee4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.452
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 6191552087404810844, guid: f5600281adb52de40a855955e7d95ee4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.165
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6191552087404810844, guid: f5600281adb52de40a855955e7d95ee4,
         type: 3}
