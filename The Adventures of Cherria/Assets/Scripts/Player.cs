@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
                 //{
                 //    pp.ammo = pp.currentAmmo;
                 //}
-                SceneManager.LoadScene(4);
+                //SceneManager.LoadScene(4);
                 break;
         }
     }
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
                 activeProjectile = 0;
             }
 
-            projectileImage.gameObject.SetActive(true);
+            //projectileImage.gameObject.SetActive(true);
             projectileImage.sprite = projectiles[activeProjectile].sprite;
             projectileAmmoText.text = projectiles[activeProjectile].currentAmmo.ToString();
         }

@@ -129398,6 +129398,7 @@ GameObject:
   - component: {fileID: 1566413380}
   - component: {fileID: 1566413382}
   - component: {fileID: 1566413381}
+  - component: {fileID: 1566413383}
   m_Layer: 0
   m_Name: "dienin\u0117s durys (1)"
   m_TagString: Untagged
@@ -129497,6 +129498,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1566413383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566413379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fa979503c35024ba22c0f0a1c1f21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextsceneload: 8
 --- !u!1 &1581158197
 GameObject:
   m_ObjectHideFlags: 0

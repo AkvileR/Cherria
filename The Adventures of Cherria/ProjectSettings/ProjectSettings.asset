@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Paper Planes Games
   productName: The Adventures of Cherria
   defaultCursor: {fileID: 2800000, guid: 7cc7e024f93b2c944ad1b5d96087c865, type: 3}
   cursorHotspot: {x: 0, y: 0}
@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.9
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0

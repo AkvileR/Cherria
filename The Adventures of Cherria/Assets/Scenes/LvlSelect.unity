@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165, y: 52.875}
+  m_AnchoredPosition: {x: -158, y: 52.875}
   m_SizeDelta: {x: 47.8, y: 45.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151913855
@@ -957,6 +957,7 @@ GameObject:
   - component: {fileID: 1166528436}
   - component: {fileID: 1166528435}
   - component: {fileID: 1166528439}
+  - component: {fileID: 1166528440}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1061,6 +1062,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5808c79deb319145879d6a81ac46396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlbuttons:
+  - {fileID: 1060750783}
+  - {fileID: 151913855}
+  - {fileID: 2111418740}
+  - {fileID: 1622466402}
+--- !u!114 &1166528440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166528434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d126884376dc486469bba5fe3105e125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1182782806

@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Diary.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -103,7 +102,10 @@
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\ChargingPlatformEnemy.cs" />
     <Compile Include="Assets\Scripts\CursorHide.cs" />
+    <Compile Include="Assets\Scripts\Cutscene.cs" />
     <Compile Include="Assets\Scripts\DamagingPlayerProjectile.cs" />
+    <Compile Include="Assets\Scripts\DeletePlayerPrefs.cs" />
+    <Compile Include="Assets\Scripts\Diary.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\FollowCursor.cs" />
     <Compile Include="Assets\Scripts\FollowingEnemy.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Assets\Scripts\HowToPlay.cs" />
     <Compile Include="Assets\Scripts\LvlSelect.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MoveToNextLevel.cs" />
     <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PlatformEnemy.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
