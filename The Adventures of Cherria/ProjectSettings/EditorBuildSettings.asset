@@ -36,6 +36,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelFour.unity
     guid: befc09681ac60f4448e28ac7bbbf747d
   - enabled: 1
+    path: Assets/Scenes/Cutscene2.unity
+    guid: a696d7da681b3484d9a0c0f224e52ae9
+  - enabled: 1
+    path: Assets/Scenes/The End.unity
+    guid: cb7e6c00419cc874f9f97dbbf791eb94
+  - enabled: 1
     path: Assets/Scenes/BossFight.unity
     guid: f0500abb63b047b47a150ffb9540df1c
   m_configObjects: {}

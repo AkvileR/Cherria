@@ -8,7 +8,7 @@ public class HowToPlay : MonoBehaviour
     
     public void Return()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(0);
     }
 
 

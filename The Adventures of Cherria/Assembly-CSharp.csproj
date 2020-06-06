@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Blueberry.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\ChargingPlatformEnemy.cs" />
+    <Compile Include="Assets\Scripts\CherriosMama.cs" />
     <Compile Include="Assets\Scripts\CursorHide.cs" />
     <Compile Include="Assets\Scripts\Cutscene.cs" />
     <Compile Include="Assets\Scripts\DamagingPlayerProjectile.cs" />
